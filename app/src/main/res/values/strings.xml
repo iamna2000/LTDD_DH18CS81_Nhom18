@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">MessApp</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="message_fragment">Message Fragment</string>
+    <string name="users_fragment">Users Fragment</string>
+    <string name="profile_fragment">Profile Fragment</string>
 </resources>
