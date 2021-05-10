@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "970838919584",
+    "project_id": "messapp-d3e67",
+    "storage_bucket": "messapp-d3e67.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:970838919584:android:b250203b5dde79a6687cc5",
+        "android_client_info": {
+          "package_name": "com.example.messapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "970838919584-pbkutt7t09ihd1oe9qlectc9lv9ca9i6.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBIq2jTfrBWNrLfG8v8U6hufNSok2kJP7k"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "970838919584-pbkutt7t09ihd1oe9qlectc9lv9ca9i6.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
