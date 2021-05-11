@@ -1,10 +1,14 @@
-package com.example.messapp;
+package com.example.messapp.Adapter;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentStatePagerAdapter;
+
+import com.example.messapp.Fragment.MessageFragment;
+import com.example.messapp.Fragment.ProfileFragment;
+import com.example.messapp.Fragment.UsersFragment;
 
 public class ViewPageAdapter extends FragmentStatePagerAdapter {
 

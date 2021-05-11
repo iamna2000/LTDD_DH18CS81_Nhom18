@@ -4,4 +4,5 @@
     <string name="message_fragment">Message Fragment</string>
     <string name="users_fragment">Users Fragment</string>
     <string name="profile_fragment">Profile Fragment</string>
+    <!-- TODO: Remove or change this placeholder text -->
 </resources>
