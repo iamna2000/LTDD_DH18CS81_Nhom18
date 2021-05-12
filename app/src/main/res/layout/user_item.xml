@@ -3,13 +3,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:padding="10dp"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:background="@color/colorAccent">
 
 
-    <com.mikhaellopez.circularimageview.CircularImageView
+    <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="70dp"
         android:layout_height="70dp"
-        android:src="@drawable/image"
+        android:src="@drawable/avatar"
         android:id="@+id/user_image"
         app:civ_border="true" />
 
@@ -22,7 +23,8 @@
         android:layout_toEndOf="@id/user_image"
         android:layout_marginLeft="15dp"
         android:layout_centerVertical="true"
-        android:textSize="20dp"
-        />
+        android:textSize="20dp" />
+
+
 
 </RelativeLayout>

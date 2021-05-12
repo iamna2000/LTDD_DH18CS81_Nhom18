@@ -78,8 +78,9 @@ public class RegisterActivity extends AppCompatActivity {
                 hashMap.put("username", username);
                 hashMap.put("email", email);
                 hashMap.put("id", user.getUid());
+                hashMap.put("imageURL", "default");
 
-                reference.push().setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
+                reference.setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
                         startActivity(new Intent(getApplicationContext(), MainActivity.class));

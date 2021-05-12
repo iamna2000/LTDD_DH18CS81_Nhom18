@@ -1,30 +1,44 @@
 package com.example.messapp;
 
 public class User {
-    public User(String email, String password) {
-        this.email = email;
-        this.password = password;
+    public User(String username, String id, String imageURL) {
+        this.username = username;
+        this.id = id;
+        this.imageURL = imageURL;
     }
 
-    public User(){}
+    public User(){
 
-    private String email;
-
-    public String getEmail() {
-        return email;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    private String username;
+
+    public String getUsername() {
+        return username;
     }
 
-    public String getPassword() {
-        return password;
+    public void setUsername(String username) {
+        this.username = username;
     }
 
-    public void setPassword(String password) {
-        this.password = password;
+    public String getId() {
+        return id;
     }
 
-    private String password;
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public String getImageURL() {
+        return imageURL;
+    }
+
+    public void setImageURL(String imageURL) {
+        this.imageURL = imageURL;
+    }
+
+    private String id;
+    private String imageURL;
+
+
 }
