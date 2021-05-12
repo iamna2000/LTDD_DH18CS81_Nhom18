@@ -1,6 +1,7 @@
 package com.example.messapp.Adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -11,6 +12,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
+import com.example.messapp.MessageActivity;
 import com.example.messapp.R;
 import com.example.messapp.User;
 
@@ -43,6 +45,15 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }else {
             Glide.with(mContext).load(user.getImageURL()).into(holder.user_image);
         }
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, MessageActivity.class);
+                intent.putExtra("id", user.getId());
+                mContext.startActivity(intent);
+            }
+        });
     }
 
     @Override
