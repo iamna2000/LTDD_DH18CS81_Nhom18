@@ -8,4 +8,6 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="colorAccent">#FF4081</color>
+    <color name="fragment2">#3ABD3C</color>
+    <color name="fragment3">#F3EC6B</color>
 </resources>
