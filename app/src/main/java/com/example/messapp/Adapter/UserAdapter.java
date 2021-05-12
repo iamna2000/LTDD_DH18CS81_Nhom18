@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.example.messapp.R;
 import com.example.messapp.User;
 
@@ -37,8 +38,10 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
         User user = mUsers.get(position);
         holder.username.setText(user.getUsername());
-        if (user.getImageURL() == "default"){
-
+        if (user.getImageURL().equals("default")){
+            holder.user_image.setImageResource(R.mipmap.ic_launcher);
+        }else {
+            Glide.with(mContext).load(user.getImageURL()).into(holder.user_image);
         }
     }
 
@@ -49,14 +52,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView username;
-        public ImageView imageView;
+        public ImageView user_image;
 
         public ViewHolder(View itemView){
             super(itemView);
 
 
             username = itemView.findViewById(R.id.username);
-            imageView = itemView.findViewById(R.id.user_image);
+            user_image = itemView.findViewById(R.id.user_image);
         }
 
     }
