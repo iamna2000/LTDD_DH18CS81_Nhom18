@@ -38,17 +38,17 @@ public class UsersFragment extends Fragment {
     @Override
     public View onCreateView(@NotNull LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-      View view = inflater.inflate(R.layout.fragment_users, container, false);
+          View view = inflater.inflate(R.layout.fragment_users, container, false);
 
-      recyclerView = view.findViewById(R.id.recycle_view);
-      recyclerView.setHasFixedSize(true);
-      recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+          recyclerView = view.findViewById(R.id.recycle_view);
+          recyclerView.setHasFixedSize(true);
+          recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-      mUsers = new ArrayList<>();
+          mUsers = new ArrayList<>();
 
-      readUsers();
+          readUsers();
 
-      return view;
+          return view;
     }
 
     private void readUsers() {
@@ -66,8 +66,9 @@ public class UsersFragment extends Fragment {
                     assert user != null;
                     assert firebaseUser != null;
 
-                    if (!user.getId().equals(firebaseUser.getUid()));
-                    mUsers.add(user);
+                    if (!user.getId().equals(firebaseUser.getUid())){
+                        mUsers.add(user);
+                    }
                 }
                 userAdapter = new UserAdapter(getContext(), mUsers);
                 recyclerView.setAdapter(userAdapter);
