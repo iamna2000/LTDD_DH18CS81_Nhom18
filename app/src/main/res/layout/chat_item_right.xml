@@ -23,7 +23,7 @@
             android:layout_height="wrap_content"
             android:text="hello"
             android:layout_alignParentEnd="true"
-            android:textSize="13sp"
+            android:textSize="18sp"
             android:textColor="#fff"
             android:padding="8dp"
             android:background="@drawable/background_right"/>
