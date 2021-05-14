@@ -52,7 +52,6 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, MessageActivity.class);
                 intent.putExtra("userid", user.getId());
-                Toast.makeText(mContext, "User ID: " + user.getId(), Toast.LENGTH_SHORT).show();
                 mContext.startActivity(intent);
             }
         });
