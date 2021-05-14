@@ -23,4 +23,6 @@
     <string name="male">Male</string>
     <string name="female">Female</string>
     <string name="email">Email</string>
+    <string name="enter_your_new_password">Enter your new password</string>
+    <string name="enter_your_email" />
 </resources>

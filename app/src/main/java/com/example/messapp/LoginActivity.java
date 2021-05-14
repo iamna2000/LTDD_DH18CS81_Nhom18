@@ -10,6 +10,7 @@ import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -25,6 +26,7 @@ public class LoginActivity extends AppCompatActivity {
     Button btn_login, register;
     FirebaseAuth mAuth;
     FirebaseUser firebaseUser;
+    TextView tv_forget;
 
     @Override
     protected void onStart() {
@@ -47,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
 
-
+        tv_forget = findViewById(R.id.tv_forget);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         btn_login = findViewById(R.id.btn_login);
@@ -74,6 +76,13 @@ public class LoginActivity extends AppCompatActivity {
         });
 
 
+        tv_forget.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(LoginActivity.this, ChangePasswordActivity.class));
+                finish();
+            }
+        });
 
         btn_login.setOnClickListener(new View.OnClickListener() {
             @Override
