@@ -8,9 +8,7 @@
     android:padding="30dp"
     tools:context=".RegisterActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
+
 
     <TextView
         android:id="@+id/tv_register"
@@ -19,7 +17,7 @@
         android:textSize="50dp"
         android:textColor="@android:color/holo_blue_dark"
         android:text="@string/register"
-        android:layout_marginTop="95dp"
+        android:layout_marginTop="160dp"
         tools:ignore="SpUsage" />
 
     <EditText
