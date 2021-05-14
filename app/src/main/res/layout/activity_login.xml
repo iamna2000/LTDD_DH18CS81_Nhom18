@@ -1,52 +1,90 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
+    android:orientation="vertical"
+    android:padding="30dp"
     tools:context=".LoginActivity">
 
     <include
         android:id="@+id/toolbar"
         layout="@layout/bar_layout"/>
-    <LinearLayout
+
+    <TextView
+        android:id="@+id/tv_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:layout_below="@+id/toolbar">
+        android:text="@string/login"
+        android:textColor="@android:color/holo_blue_dark"
+        android:textSize="48dp"
+        android:layout_marginTop="120dp"
+        tools:ignore="MissingConstraints,SpUsage" />
 
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:hint="@string/email"
+        tools:ignore="MissingConstraints,TextFields"
+        android:autofillHints="@string/user_name"
+        android:inputType="textEmailAddress" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:textSize="24dp"
-            android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="numberPassword"
+        android:layout_marginTop="20dp"
+        tools:ignore="Autofill,MissingConstraints" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="10dp"/>
+    <TextView
+        android:id="@+id/tv_forget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forget_your_password"
+        android:textColor="#5283c0"
+        android:layout_marginLeft="150dp"
+        android:layout_marginTop="0dp"
+        android:textSize="15dp"
+        tools:ignore="MissingConstraints,RtlHardcoded,SpUsage" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="numberPassword"
-            android:layout_marginTop="10dp"/>
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Login"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_bg"/>
+    <Button
+        android:id="@+id/btn_login"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginLeft="160dp"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button"
+        android:text="@string/login"
+        android:textColor="#ffffff"
+        android:textSize="24dp"
+        tools:ignore="@android:string/VideoView_error_button,RtlHardcoded,SpUsage" />
 
-    </LinearLayout>
-</RelativeLayout>
+    <TextView
+        android:id="@+id/tv_or"
+        android:layout_width="242dp"
+        android:layout_height="wrap_content"
+        android:text="@string/or"
+        android:layout_marginLeft="210dp"
+        android:layout_marginTop="5dp"
+        android:textColor="#5293C0"
+        android:textSize="15dp"
+        tools:ignore="MissingConstraints,RtlHardcoded,SpUsage" />
+
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="wrap_content"
+        android:layout_height="60dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="160dp"
+        android:text="@string/register"
+        android:textColor="#ffffff"
+        android:background="@drawable/button"
+        android:textSize="24dp"
+        tools:ignore="MissingConstraints,RtlHardcoded,SpUsage" />
+
+</LinearLayout>
