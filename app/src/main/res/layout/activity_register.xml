@@ -1,59 +1,58 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/login"
+    android:orientation="vertical"
+    android:padding="30dp"
     tools:context=".RegisterActivity">
 
-    <include
-        android:id="@+id/toolbar"
-        layout="@layout/bar_layout"/>
-    <LinearLayout
+
+
+    <TextView
+        android:id="@+id/tv_register"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="16dp"
-        android:layout_below="@+id/toolbar">
+        android:textSize="50dp"
+        android:textColor="@android:color/holo_blue_dark"
+        android:text="@string/register"
+        android:layout_marginTop="160dp"
+        tools:ignore="SpUsage" />
 
+    <EditText
+        android:id="@+id/username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/user_name"
+        android:inputType="text"
+        android:layout_marginTop="10dp"
+        tools:ignore="Autofill" />
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Create your account"
-            android:textSize="24dp"
-            android:textStyle="bold"/>
+    <EditText
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        tools:ignore="Autofill" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/username"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Username"
-            android:layout_marginTop="10dp"/>
+    <EditText
+        android:id="@+id/password"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="@string/password"
+        android:inputType="numberPassword"
+        tools:ignore="Autofill" />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/email"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Email"
-            android:inputType="textEmailAddress"
-            android:layout_marginTop="10dp"/>
-
-        <com.google.android.material.textfield.TextInputEditText
-            android:id="@+id/password"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:hint="Password"
-            android:inputType="numberPassword"
-            android:layout_marginTop="10dp"/>
-        <Button
-            android:id="@+id/btn_register"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Register"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/btn_bg"/>
-
-    </LinearLayout>
-</RelativeLayout>
+    <Button
+        android:id="@+id/btn_register"
+        android:layout_width="wrap_content"
+        android:layout_height="65dp"
+        android:layout_marginTop="20dp"
+        android:layout_marginStart="155dp"
+        android:text="@string/register"
+        android:textColor="#ffffff"
+        android:textSize="24sp"
+        android:background="@drawable/button"/>
+</LinearLayout>

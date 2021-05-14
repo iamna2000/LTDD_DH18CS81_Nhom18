@@ -1,4 +1,4 @@
-package com.example.messapp;
+package com.example.messapp.Model;
 
 public class User {
     public User(String username, String id, String imageURL) {

@@ -4,6 +4,16 @@
     <style name="MenuStyle" parent="Theme.AppCompat.Light.NoActionBar">
 
         <item name="android:background">@android:color/white</item>
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">#35788C</item>
+        <item name="colorPrimaryVariant">#2AA5C5</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/teal_200</item>
+        <item name="colorSecondaryVariant">@color/teal_700</item>
+        <item name="colorOnSecondary">@color/black</item>
+        <!-- Status bar color. -->
+        <!-- Customize your theme here. -->
     </style>
 
 </resources>
