@@ -52,7 +52,7 @@ public class MessageActivity extends AppCompatActivity {
 
     Intent intent;
 
-    String userid;
+//    String userid;
 
 
     @Override
@@ -67,7 +67,7 @@ public class MessageActivity extends AppCompatActivity {
         toolbar.setNavigationOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                finish();
+                startActivity(new Intent(MessageActivity.this, MainActivity.class).setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP));
             }
         });
 
@@ -112,7 +112,7 @@ public class MessageActivity extends AppCompatActivity {
                 if (user.getImageURL().equals("default")){
                     user_image.setImageResource(R.mipmap.ic_launcher);
                 }else{
-                    Glide.with(MessageActivity.this).load(user.getImageURL()).into(user_image);
+                    Glide.with(getApplicationContext()).load(user.getImageURL()).into(user_image);
                 }
                 readMessage(fuser.getUid(), userid, user.getImageURL());
             }
@@ -124,13 +124,12 @@ public class MessageActivity extends AppCompatActivity {
         });
     }
 
-    private void seenMessage(String userid){
-
-    }
 
     private void sendMessage( String sender, String receiver, String message){
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference();
+        final String userid = intent.getStringExtra("userid");
+
 
         HashMap<String, Object> hashMap = new HashMap<>();
         hashMap.put("sender", sender);
