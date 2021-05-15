@@ -55,13 +55,14 @@
         android:layout_alignParentBottom="true">
 
         <EditText
+            android:id="@+id/text_send"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:id="@+id/text_send"
-            android:background="@android:color/transparent"
-            android:hint="Type a message..."
+            android:layout_centerVertical="true"
             android:layout_toLeftOf="@+id/btn_send"
-            android:layout_centerVertical="true"/>
+            android:background="@android:color/transparent"
+            android:fontFamily="@font/montserrat"
+            android:hint="Type a message..." />
 
         <ImageButton
             android:layout_width="40dp"

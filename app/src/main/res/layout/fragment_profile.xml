@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/fragment3"
+    android:background="#9FA1A5"
     android:padding="8dp"
     tools:context=".Fragment.ProfileFragment">
 
@@ -14,33 +14,35 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:padding="8dp"
-            android:layout_height="350dp">
+            android:layout_height="250dp">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/montserrat"
                 android:text="Profile"
-                android:textStyle="bold"
-                android:textSize="24dp"/>
+                android:textSize="20dp"
+                android:textStyle="bold" />
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="200dp"
-                android:layout_height="200dp"
+                android:layout_width="120dp"
+                android:layout_height="120dp"
                 android:id="@+id/user_image"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="50dp"/>
+                android:layout_marginTop="40dp"/>
 
             <TextView
+                android:id="@+id/username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Username"
-                android:id="@+id/username"
                 android:layout_below="@+id/user_image"
                 android:layout_centerHorizontal="true"
-                android:textStyle="bold"
-                android:textSize="30sp"
-                android:layout_marginTop="20dp"
-                android:textColor="#4A4444"/>
+                android:layout_marginTop="10dp"
+                android:fontFamily="@font/montserrat"
+                android:text="Username"
+                android:textColor="#4A4444"
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
 
 

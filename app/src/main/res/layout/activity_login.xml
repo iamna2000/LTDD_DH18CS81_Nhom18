@@ -13,10 +13,11 @@
         android:id="@+id/tv_login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="120dp"
+        android:fontFamily="@font/montserrat"
         android:text="@string/login"
         android:textColor="@android:color/holo_blue_dark"
         android:textSize="48dp"
-        android:layout_marginTop="120dp"
         tools:ignore="MissingConstraints,SpUsage" />
 
     <EditText
@@ -24,18 +25,20 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:hint="@string/email"
-        tools:ignore="MissingConstraints,TextFields"
         android:autofillHints="@string/user_name"
-        android:inputType="textEmailAddress" />
+        android:fontFamily="@font/montserrat"
+        android:hint="@string/email"
+        android:inputType="textEmailAddress"
+        tools:ignore="MissingConstraints,TextFields" />
 
     <EditText
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:fontFamily="@font/montserrat"
         android:hint="@string/password"
         android:inputType="numberPassword"
-        android:layout_marginTop="20dp"
         tools:ignore="Autofill,MissingConstraints" />
 
     <TextView
@@ -56,6 +59,8 @@
         android:layout_marginLeft="160dp"
         android:layout_marginTop="10dp"
         android:background="@drawable/button"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="bold"
         android:text="@string/login"
         android:textColor="#ffffff"
         android:textSize="24dp"
@@ -66,7 +71,7 @@
         android:layout_width="242dp"
         android:layout_height="wrap_content"
         android:text="@string/or"
-        android:layout_marginLeft="210dp"
+        android:layout_marginLeft="230dp"
         android:layout_marginTop="5dp"
         android:textColor="#5293C0"
         android:textSize="15dp"
@@ -76,11 +81,13 @@
         android:id="@+id/register"
         android:layout_width="wrap_content"
         android:layout_height="60dp"
-        android:layout_marginTop="5dp"
         android:layout_marginLeft="160dp"
+        android:layout_marginTop="5dp"
+        android:background="@drawable/button"
+        android:fontFamily="@font/montserrat"
+        android:textStyle="bold"
         android:text="@string/register"
         android:textColor="#ffffff"
-        android:background="@drawable/button"
         android:textSize="24dp"
         tools:ignore="MissingConstraints,RtlHardcoded,SpUsage" />
 
