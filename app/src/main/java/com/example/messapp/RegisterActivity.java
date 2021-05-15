@@ -16,21 +16,23 @@ import androidx.appcompat.widget.Toolbar;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.textfield.TextInputEditText;
+import com.google.android.material.textfield.TextInputLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.HashMap;
+import java.util.regex.Pattern;
 
 public class RegisterActivity extends AppCompatActivity {
 
-    EditText username, email, password;
+    EditText username, email, password, confirm_password;
     Button btn_register;
+    TextInputLayout user;
 
     FirebaseAuth mAuth;
     DatabaseReference reference;
-
 
 
     @Override
@@ -42,7 +44,9 @@ public class RegisterActivity extends AppCompatActivity {
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
+        confirm_password = findViewById(R.id.confirm_password);
         btn_register = findViewById(R.id.btn_register);
+        user = findViewById(R.id.user);
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -52,42 +56,40 @@ public class RegisterActivity extends AppCompatActivity {
                 String txt_username = username.getText().toString();
                 String txt_email = email.getText().toString();
                 String txt_password = password.getText().toString();
+                String txt_confirm = confirm_password.getText().toString();
+
 
                 if (TextUtils.isEmpty(txt_username) || TextUtils.isEmpty(txt_password) || TextUtils.isEmpty(txt_email) ){
                     Toast.makeText(RegisterActivity.this, "Fill all information", Toast.LENGTH_SHORT).show();
-                }else if (txt_password.length() < 6){
-                    Toast.makeText(RegisterActivity.this, "Password must be at least 6 characters" , Toast.LENGTH_SHORT).show();
-                }else {
+                }else if (!validatePassword(txt_password)){
+
+                }else if (!txt_confirm.equals(txt_password)){
+                    Toast.makeText(RegisterActivity.this, "Password is not match !!", Toast.LENGTH_SHORT).show();
+                }else{
                     register(txt_username, txt_email, txt_password);
                 }
             }
         });
     }
 
+    private boolean validatePassword(String password){
 
-//    private void addValidation(){
-//        awesomeValidation = new AwesomeValidation(BASIC);
-//        awesomeValidation.addValidation(RegistActivity.this, R.id.edt_fullname, RegexTemplate.NOT_EMPTY ,R.string.err_fullname);
-//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_address,RegexTemplate.NOT_EMPTY,R.string.err_value);
-//        awesomeValidation.addValidation(RegistActivity.this, R.id.edt_cellphone, RegexTemplate.TELEPHONE + RegexTemplate.NOT_EMPTY , R.string
-//                .err_phone);
-//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_cellphone,new SimpleCustomValidation() {
-//            @Override
-//            public boolean compare(String s) {
-//                if (s.length() < 8 || s.length() > 13){
-//                    return false;
-//                }else {
-//                    return true;
-//                }
-//            }
-//        },R.string.err_value);
-//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_username, Patterns.EMAIL_ADDRESS,R.string
-//                .err_email);
-//        String regexPassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
-//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_password, regexPassword,R.string
-//                .err_password);
-//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_confirmpassword,R.id.edt_password,R.string.err_confirmpassword);
-//    }
+        Pattern lowerCase = Pattern.compile("[a-z]");
+        Pattern digitCase = Pattern.compile("[0-9]");
+
+        if (password.length() < 6){
+            Toast.makeText(RegisterActivity.this, "Password must be at least 6 characters" , Toast.LENGTH_SHORT).show();
+            return false;
+        }else if (!lowerCase.matcher(password).find()){
+            Toast.makeText(RegisterActivity.this, "Password must has at least 1 lowercase" , Toast.LENGTH_SHORT).show();
+            return false;
+        }else if (!digitCase.matcher(password).find()) {
+            Toast.makeText(RegisterActivity.this, "Password must has at least 1 number", Toast.LENGTH_SHORT).show();
+            return false;
+        }
+
+    return true;
+    }
 
     private void register(String username, String email, String password){
         mAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener(authResult -> {

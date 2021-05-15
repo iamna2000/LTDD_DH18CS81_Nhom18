@@ -3,6 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/login"
     android:orientation="vertical"
     android:padding="30dp"
@@ -20,14 +21,21 @@
         android:layout_marginTop="160dp"
         tools:ignore="SpUsage" />
 
-    <EditText
-        android:id="@+id/username"
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/user"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:hint="@string/user_name"
-        android:inputType="text"
-        android:layout_marginTop="10dp"
-        tools:ignore="Autofill" />
+        android:layout_height="wrap_content">
+        <EditText
+            android:id="@+id/username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/user_name"
+            android:inputType="text"
+            android:layout_marginTop="10dp"
+            tools:ignore="Autofill" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
 
     <EditText
         android:id="@+id/email"
@@ -42,15 +50,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="@string/password"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         tools:ignore="Autofill" />
     <EditText
         android:id="@+id/confirm_password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="Confirm Password"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         tools:ignore="Autofill" />
+
 
     <Button
         android:id="@+id/btn_register"
