@@ -38,7 +38,7 @@
         android:layout_marginTop="20dp"
         android:fontFamily="@font/montserrat"
         android:hint="@string/password"
-        android:inputType="numberPassword"
+        android:inputType="textPassword"
         tools:ignore="Autofill,MissingConstraints" />
 
     <TextView
