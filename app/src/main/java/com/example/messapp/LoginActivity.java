@@ -36,9 +36,11 @@ public class LoginActivity extends AppCompatActivity {
 
 
         if(firebaseUser != null ){
-            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
-            startActivity(intent);
-            finish();
+            if (firebaseUser.isEmailVerified()){
+                Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+                startActivity(intent);
+                finish();
+            }
         }
 
     }

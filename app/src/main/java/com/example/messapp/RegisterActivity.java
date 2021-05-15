@@ -3,6 +3,7 @@ package com.example.messapp;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,6 +30,8 @@ public class RegisterActivity extends AppCompatActivity {
 
     FirebaseAuth mAuth;
     DatabaseReference reference;
+
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -62,6 +65,30 @@ public class RegisterActivity extends AppCompatActivity {
     }
 
 
+//    private void addValidation(){
+//        awesomeValidation = new AwesomeValidation(BASIC);
+//        awesomeValidation.addValidation(RegistActivity.this, R.id.edt_fullname, RegexTemplate.NOT_EMPTY ,R.string.err_fullname);
+//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_address,RegexTemplate.NOT_EMPTY,R.string.err_value);
+//        awesomeValidation.addValidation(RegistActivity.this, R.id.edt_cellphone, RegexTemplate.TELEPHONE + RegexTemplate.NOT_EMPTY , R.string
+//                .err_phone);
+//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_cellphone,new SimpleCustomValidation() {
+//            @Override
+//            public boolean compare(String s) {
+//                if (s.length() < 8 || s.length() > 13){
+//                    return false;
+//                }else {
+//                    return true;
+//                }
+//            }
+//        },R.string.err_value);
+//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_username, Patterns.EMAIL_ADDRESS,R.string
+//                .err_email);
+//        String regexPassword = "^(?=.*[a-z])(?=.*[A-Z])(?=.*\\d)[a-zA-Z\\d]{8,}$";
+//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_password, regexPassword,R.string
+//                .err_password);
+//        awesomeValidation.addValidation(RegistActivity.this,R.id.edt_confirmpassword,R.id.edt_password,R.string.err_confirmpassword);
+//    }
+
     private void register(String username, String email, String password){
         mAuth.createUserWithEmailAndPassword(email, password).addOnSuccessListener(authResult -> {
 
@@ -80,7 +107,7 @@ public class RegisterActivity extends AppCompatActivity {
                 reference.setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override
                     public void onSuccess(Void aVoid) {
-                        startActivity(new Intent(getApplicationContext(), MainActivity.class));
+                        startActivity(new Intent(getApplicationContext(), VerifyMail.class));
                         finish();
                     }
                 });
