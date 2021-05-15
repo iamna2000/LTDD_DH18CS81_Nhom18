@@ -21,12 +21,13 @@
             android:id="@+id/show_message"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="hello"
             android:layout_alignParentEnd="true"
-            android:textSize="18sp"
-            android:textColor="#fff"
+            android:background="@drawable/background_right"
+            android:fontFamily="@font/montserrat"
             android:padding="8dp"
-            android:background="@drawable/background_right"/>
+            android:text="hello"
+            android:textColor="#fff"
+            android:textSize="18sp" />
 
     </RelativeLayout>
 

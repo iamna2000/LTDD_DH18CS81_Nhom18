@@ -3,13 +3,22 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#86ADF8"
+    android:background="#9FA1A5"
     tools:context=".Fragment.MessageFragment">
-    
-    <androidx.recyclerview.widget.RecyclerView
+
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/recycle_view"/>
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:layout_margin="3dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/recycle_view"
+            android:background="@drawable/bg_border"/>
+    </RelativeLayout>
+
 
 
 

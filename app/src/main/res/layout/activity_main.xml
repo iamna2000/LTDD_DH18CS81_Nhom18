@@ -15,7 +15,7 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:background="#6d95fa"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle">
 
@@ -25,15 +25,17 @@
                 android:id="@+id/user_image" />
 
             <TextView
+                android:id="@+id/menu_username"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:id="@+id/menu_username"
-                android:layout_toRightOf="@id/user_image"
-                android:layout_toEndOf="@id/user_image"
-                android:layout_marginLeft="35dp"
                 android:layout_centerVertical="true"
+                android:layout_marginLeft="28dp"
+                android:layout_toEndOf="@id/user_image"
+                android:layout_toRightOf="@id/user_image"
+                android:fontFamily="@font/montserrat"
                 android:textSize="20dp"
-                android:textStyle="bold"/>
+                android:textStyle="bold"
+                android:textColor="@color/white"/>
 
         </androidx.appcompat.widget.Toolbar>
 
