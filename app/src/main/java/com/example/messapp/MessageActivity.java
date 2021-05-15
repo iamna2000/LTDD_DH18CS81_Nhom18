@@ -108,7 +108,7 @@ public class MessageActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
                 username.setText(user.getUsername());
-                Toast.makeText(MessageActivity.this, "Username : "  + user.getUsername(), Toast.LENGTH_SHORT).show();
+//                Toast.makeText(MessageActivity.this, "Username : "  + user.getUsername(), Toast.LENGTH_SHORT).show();
                 if (user.getImageURL().equals("default")){
                     user_image.setImageResource(R.mipmap.ic_launcher);
                 }else{
@@ -141,6 +141,25 @@ public class MessageActivity extends AppCompatActivity {
         final DatabaseReference chatRef = FirebaseDatabase.getInstance().getReference("Chatlist")
                 .child(fuser.getUid())
                 .child(userid);
+
+        final DatabaseReference chatRefReceiver = FirebaseDatabase.getInstance().getReference("Chatlist")
+                .child(receiver)
+                .child(fuser.getUid());
+
+        chatRefReceiver.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot snapshot) {
+                if(!snapshot.exists()){
+                    chatRefReceiver.child("id").setValue(fuser.getUid());
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
+        chatRefReceiver.child("id").setValue(fuser.getUid());
 
         chatRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override

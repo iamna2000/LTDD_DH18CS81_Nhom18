@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#9FA1A5"
+    android:background="#004D97BF"
     tools:context=".Fragment.MessageFragment">
 
 
@@ -12,7 +12,9 @@
         android:layout_height="match_parent">
 
         <androidx.recyclerview.widget.RecyclerView
-            android:layout_margin="3dp"
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="3dp"
+            android:layout_marginRight="3dp"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/recycle_view"

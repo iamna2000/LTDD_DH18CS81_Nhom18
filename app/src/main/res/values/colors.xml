@@ -10,4 +10,8 @@
     <color name="colorAccent">#70a1ff</color>
     <color name="fragment2">#3ABD3C</color>
     <color name="fragment3">#F3EC6B</color>
+    <color name="PrimaryDarkColor">#62757F</color>
+    <color name="PrimaryLightColor">#E1E2E1</color>
+    <color name="PrimaryColor">#90a4ae</color>
+    <color name="ItemColor">#9fa8da</color>
 </resources>

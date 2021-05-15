@@ -27,8 +27,8 @@
         android:layout_toEndOf="@id/user_image"
         android:layout_toRightOf="@id/user_image"
         android:fontFamily="@font/montserrat"
-        android:textColor="#FFFFFF"
-        android:textSize="20dp"
+        android:textColor="#30323C"
+        android:textSize="19dp"
         android:textStyle="bold" />
 
     <TextView
@@ -40,7 +40,7 @@
         android:layout_toRightOf="@+id/user_image"
         android:fontFamily="@font/montserrat"
         android:maxLines="1"
-        android:textColor="#E60F0F"
-        android:textSize="14dp" />
+        android:textColor="#595555"
+        android:textSize="15dp" />
 
 </RelativeLayout>
