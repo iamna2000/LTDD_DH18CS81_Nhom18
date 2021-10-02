@@ -20,8 +20,8 @@
             app:popupTheme="@style/MenuStyle">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
+                android:layout_width="45dp"
+                android:layout_height="45dp"
                 android:id="@+id/user_image" />
 
             <TextView
@@ -32,8 +32,8 @@
                 android:layout_marginLeft="28dp"
                 android:layout_toEndOf="@id/user_image"
                 android:layout_toRightOf="@id/user_image"
-                android:fontFamily="@font/montserrat"
-                android:textSize="20dp"
+                android:fontFamily="@font/roboto1"
+                android:textSize="23dp"
                 android:textStyle="bold"
                 android:textColor="@color/white"/>
 

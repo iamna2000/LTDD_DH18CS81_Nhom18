@@ -5,6 +5,8 @@ import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -30,12 +32,14 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     private Context mContext;
     private List<User> mUsers;
+    private boolean isChat;
 
     String theLastMessage;
 
-    public UserAdapter (Context mContext, List<User> mUsers){
+    public UserAdapter (Context mContext, List<User> mUsers, boolean isChat){
         this.mUsers = mUsers;
         this.mContext = mContext;
+        this.isChat = isChat;
 
     }
 
@@ -48,6 +52,9 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull ViewHolder holder, int position) {
+        Animation animation = AnimationUtils.loadAnimation(holder.itemView.getContext(), android.R.anim.slide_in_left);
+        holder.itemView.startAnimation(animation );
+
         User user = mUsers.get(position);
         holder.username.setText(user.getUsername());
         if (user.getImageURL().equals("default")){
@@ -57,6 +64,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         }
         lastMessage(user.getId(), holder.last_msg);
 
+        if (isChat){
+            if (user.getStatus().equals("online")){
+                holder.img_on.setVisibility(View.VISIBLE);
+                holder.img_off.setVisibility(View.GONE);
+            }else{
+                holder.img_on.setVisibility(View.GONE);
+                holder.img_off.setVisibility(View.VISIBLE);
+            }
+        }else{
+            holder.img_on.setVisibility(View.GONE);
+            holder.img_off.setVisibility(View.GONE);
+        }
 
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -78,14 +97,18 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
         public TextView username;
         public ImageView user_image;
         private TextView last_msg;
+        private ImageView img_off;
+        private ImageView img_on;
+
 
         public ViewHolder(View itemView){
             super(itemView);
 
-
             username = itemView.findViewById(R.id.username);
             user_image = itemView.findViewById(R.id.user_image);
             last_msg = itemView.findViewById(R.id.last_msg);
+            img_on = itemView.findViewById(R.id.img_on);
+            img_off = itemView.findViewById(R.id.img_off);
         }
 
     }
@@ -101,6 +124,7 @@ public class UserAdapter extends RecyclerView.Adapter<UserAdapter.ViewHolder> {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Chat chat = dataSnapshot.getValue(Chat.class);
+                    assert firebaseUser != null;
                     if (chat.getReceiver().equals(firebaseUser.getUid()) && chat.getSender().equals(userid) ||
                             chat.getReceiver().equals(userid) && chat.getSender().equals(firebaseUser.getUid())){
                         theLastMessage = chat.getMessage();
