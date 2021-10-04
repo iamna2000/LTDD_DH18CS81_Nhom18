@@ -14,10 +14,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MessApp">
         <activity android:name=".VerifyMail"></activity>
-        <activity android:name=".ChangePasswordActivity" />
+        <activity
+            android:name=".ChangePasswordActivity"
+            android:parentActivityName=".LoginActivity"/>
         <activity android:name=".MessageActivity" />
         <activity android:name=".MainActivity" />
-        <activity android:name=".RegisterActivity" />
+        <activity
+            android:name=".RegisterActivity"
+            android:parentActivityName=".LoginActivity"/>
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -30,7 +34,7 @@
             android:enabled="true"
             android:exported="true">
             <intent-filter>
-                <action android:name="com.google.firebase.INSTACE_ID_EVENT" />
+                <action android:name="com.google.firebase.INSTANCE_ID_EVENT" />
             </intent-filter>
         </service>
         <service android:name=".Notifications.FirebaseMessaging"

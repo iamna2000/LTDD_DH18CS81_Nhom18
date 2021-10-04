@@ -38,19 +38,19 @@ public class Notification8 extends ContextWrapper {
 
     public NotificationManager getManager (){
         if (notificationManager == null){
-            notificationManager = (NotificationManager)getSystemService(Context.NOTIFICATION_SERVICE);
+            notificationManager = (NotificationManager) getSystemService(Context.NOTIFICATION_SERVICE);
         }
         return notificationManager;
     }
 
     @TargetApi(Build.VERSION_CODES.O)
-    public Notification.Builder getNotification8(String title, String body, PendingIntent pendingIntent, Uri uri, String icon){
+    public Notification.Builder getNotification8(String title, String body, PendingIntent pendingIntent, Uri soundUri, String icon){
         return new Notification.Builder(getApplicationContext(),CHANNEL_ID)
                 .setSmallIcon(Integer.parseInt(icon))
                 .setContentTitle(title)
                 .setContentText(body)
                 .setAutoCancel(true)
-                .setSound(uri)
+                .setSound(soundUri)
                 .setContentIntent(pendingIntent);
     }
 }

@@ -85,7 +85,7 @@ public class MessageActivity extends AppCompatActivity {
             }
         });
 
-        apiS = Client.getClient("http://fcm.googleapis.com/").create(APIs.class);
+        apiS = Client.getClient("https://fcm.googleapis.com/").create(APIs.class);
 
         recyclerView = findViewById(R.id.recycle_view);
         recyclerView.setHasFixedSize(true);
@@ -245,10 +245,10 @@ public class MessageActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-                    Token itoken = dataSnapshot.getValue(Token.class);
-                    Notification notification = new Notification(fuser.getUid(), R.mipmap.ic_launcher, username+":  "+message, "New message", userid);
+                    Token token = dataSnapshot.getValue(Token.class);
+                    Notification notification = new Notification(fuser.getUid(), R.drawable.img, username+" :  "+message, "Nước sôi đây !", userid);
 
-                    Sender sender = new Sender(notification, itoken.getToken());
+                    Sender sender = new Sender(notification, token.getToken());
 
                     apiS.sendNotification(sender)
                             .enqueue(new Callback<Response>() {
