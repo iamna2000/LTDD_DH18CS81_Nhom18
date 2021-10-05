@@ -115,30 +115,5 @@ public class MessageFragment extends Fragment {
         });
     }
 
-//    private void sortChatList(){
-//
-//        List<User> lastUser = mUsers;
-//
-//        reference = FirebaseDatabase.getInstance().getReference("Chats");
-//        reference.orderByKey().addValueEventListener(new ValueEventListener() {
-//            @Override
-//            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//                for (DataSnapshot dataSnapshot : snapshot.getChildren()){
-//                    Chat chat = dataSnapshot.getValue(Chat.class);
-//                    for (User user : lastUser){
-//                        if (chat.getReceiver().equals(user.getId())){
-//                            lastUser.add(user);
-//                        }
-//                    }
-//                }
-//                userAdapter = new UserAdapter(getContext(), mUsers, true);
-//                recyclerView.setAdapter(userAdapter);
-//            }
-//
-//            @Override
-//            public void onCancelled(@NonNull DatabaseError error) {
-//
-//            }
-//        });
-//    }
+
 }
