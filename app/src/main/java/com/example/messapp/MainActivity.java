@@ -18,7 +18,6 @@ import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import com.example.messapp.Adapter.ViewPageAdapter;
 import com.example.messapp.Model.User;
-import com.example.messapp.Notifications.Token;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,7 +26,6 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
-import com.google.firebase.iid.FirebaseInstanceId;
 
 import java.util.HashMap;
 
@@ -88,14 +86,6 @@ public class MainActivity extends AppCompatActivity {
 
             }
         });
-
-        updateToken(FirebaseInstanceId.getInstance().getToken());
-    }
-
-    private void updateToken(String token) {
-        DatabaseReference tokenRef = FirebaseDatabase.getInstance().getReference("Token");
-        Token token1 = new Token(token);
-        tokenRef.child(firebaseUser.getUid()).setValue(token1);
     }
 
     @Override
