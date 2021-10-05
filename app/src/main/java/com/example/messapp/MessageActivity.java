@@ -246,7 +246,7 @@ public class MessageActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for (DataSnapshot dataSnapshot : snapshot.getChildren()){
                     Token token = dataSnapshot.getValue(Token.class);
-                    Notification notification = new Notification(fuser.getUid(), R.drawable.img, username+" :  "+message, "Nước sôi đây !", userid);
+                    Notification notification = new Notification(fuser.getUid(), R.drawable.messapp_icon, username+" :  "+message, "Nước sôi đây !", userid);
 
                     Sender sender = new Sender(notification, token.getToken());
 
