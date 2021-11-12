@@ -1,28 +1,4 @@
-<resources>
-    <string name="app_name">MessApp</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="message_fragment">Message Fragment</string>
-    <string name="users_fragment">Users Fragment</string>
-    <string name="profile_fragment">Profile Fragment</string>
-    <string name="title_activity_message">MessageActivity</string>
-    <!--
-    This string is used for square devices and overridden by hello_world in
-    values-round/strings.xml for round devices.
-    -->
-    <string name="hello_world">Hello Square World!</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="forget_your_password">Forget your password?</string>
-    <string name="password">Password</string>
-    <string name="name">Name</string>
-    <string name="login">LOGIN</string>
-    <string name="or">-- Or --</string>
-    <string name="register">Register</string>
-    <string name="user_name">User Name</string>
-    <string name="confirm_password">Confirm Password</string>
-    <string name="gender">Gender:</string>
-    <string name="male">Male</string>
-    <string name="female">Female</string>
-    <string name="email">Email</string>
-    <string name="enter_your_new_password">Enter your new password</string>
-    <string name="enter_your_email" />
-</resources>
+<changelist name="Uncommitted_changes_before_Checkout_at_9_30_2021_7_19_AM_[Default_Changelist]" date="1632961203770" recycled="true" deleted="true">
+  <option name="PATH" value="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_9_30_2021_7_19_AM_[Default_Changelist]/shelved.patch" />
+  <option name="DESCRIPTION" value="Uncommitted changes before Checkout at 9/30/2021 7:19 AM [Default Changelist]" />
+</changelist>

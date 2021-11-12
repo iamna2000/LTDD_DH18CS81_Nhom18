@@ -60,11 +60,13 @@ public class MainActivity extends AppCompatActivity {
         mViewPager.setAdapter(viewPagerAdapter);
 
         mTabLayout.setupWithViewPager(mViewPager);
-
+        mTabLayout.getTabAt(0).setIcon(R.drawable.ic_black_mess);
+        mTabLayout.getTabAt(1).setIcon(R.drawable.ic_people_24);
+        mTabLayout.getTabAt(2).setIcon(R.drawable.ic_person_pin_24);
 
         ////
         user_image = findViewById(R.id.user_image);
-        username = findViewById(R.id.menu_username);
+//        username = findViewById(R.id.menu_username);
 
         firebaseUser = FirebaseAuth.getInstance().getCurrentUser();
         reference = FirebaseDatabase.getInstance().getReference("User").child(firebaseUser.getUid());
@@ -73,7 +75,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 User user = snapshot.getValue(User.class);
-                username.setText(user.getUsername());
+//                username.setText(user.getUsername());
                 if(user.getImageURL().equals("default")){
                     user_image.setImageResource(R.mipmap.ic_launcher);
                 }else{
