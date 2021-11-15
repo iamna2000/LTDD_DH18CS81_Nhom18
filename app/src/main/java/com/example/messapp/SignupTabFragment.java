@@ -19,7 +19,7 @@ public class SignupTabFragment extends Fragment {
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
-        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.login_tab_fragment, container, false);
+        ViewGroup root = (ViewGroup) inflater.inflate(R.layout.register_tab_fragment, container, false);
 
 
         username = root.findViewById(R.id.username);
@@ -30,7 +30,7 @@ public class SignupTabFragment extends Fragment {
 
         email.setTranslationX(800);
         password.setTranslationX(800);
-//        confirmPass.setTranslationX(800);
+        confirmPass.setTranslationX(800);
         username.setTranslationX(800);
         signup.setTranslationX(800);
 

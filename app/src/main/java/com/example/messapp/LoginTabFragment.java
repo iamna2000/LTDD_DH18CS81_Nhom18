@@ -24,7 +24,7 @@ public class LoginTabFragment extends Fragment {
 
         email = root.findViewById(R.id.email);
         password = root.findViewById(R.id.password);
-        forgetPass = root.findViewById(R.id.forgetPass);
+        forgetPass = root.findViewById(R.id.tv_forget);
         login = root.findViewById(R.id.btn_login);
 
         email.setTranslationX(800);
