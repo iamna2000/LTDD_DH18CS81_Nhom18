@@ -128,6 +128,19 @@ public class LoginActivity extends AppCompatActivity {
             }
         });
 
+        google.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "Sorry :( I am not ready yet !", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+        fb.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(LoginActivity.this, "Sorry :( I am not ready yet !", Toast.LENGTH_SHORT).show();
+            }
+        });
 
         tv_forget.setOnClickListener(new View.OnClickListener() {
             @Override

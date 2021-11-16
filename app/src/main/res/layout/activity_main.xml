@@ -9,20 +9,21 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/PrimaryColor"
+            android:layout_height="80dp"
+            android:background="@color/yellowMain"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle">
 
             <de.hdodenhof.circleimageview.CircleImageView
                 android:id="@+id/user_image"
-                android:layout_width="45dp"
-                android:layout_height="45dp"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
                 android:layout_gravity="center" />
 
 
@@ -48,6 +49,7 @@
         android:id="@+id/view_pager"
         android:layout_width="match_parent"
         android:layout_height="0dp"
+        android:background="@color/yellowMain"
         android:layout_weight="1" />
 
     <com.google.android.material.tabs.TabLayout
@@ -57,6 +59,7 @@
         app:tabSelectedTextColor="@color/purple_500"
         app:tabIndicatorColor="#F17E0C"
         app:tabIndicatorGravity="top"
+        android:elevation="5dp"
         app:tabIndicatorAnimationMode="elastic"
         app:tabIndicatorFullWidth="false"/>
 

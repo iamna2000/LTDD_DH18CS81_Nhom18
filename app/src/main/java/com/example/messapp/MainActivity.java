@@ -4,6 +4,7 @@ import androidx.annotation.NonNull;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.core.content.ContextCompat;
 import androidx.fragment.app.FragmentStatePagerAdapter;
 import androidx.viewpager.widget.ViewPager;
 
@@ -63,6 +64,7 @@ public class MainActivity extends AppCompatActivity {
         mTabLayout.getTabAt(0).setIcon(R.drawable.ic_black_mess);
         mTabLayout.getTabAt(1).setIcon(R.drawable.ic_people_24);
         mTabLayout.getTabAt(2).setIcon(R.drawable.ic_person_pin_24);
+
 
         ////
         user_image = findViewById(R.id.user_image);

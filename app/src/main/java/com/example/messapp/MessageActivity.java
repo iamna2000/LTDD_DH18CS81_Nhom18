@@ -7,9 +7,13 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.service.autofill.Dataset;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.LinearLayout;
@@ -64,6 +68,7 @@ public class MessageActivity extends AppCompatActivity {
     Intent intent;
 
     String userid;
+    String color = "#fada5f";
 
     APIs apiS;
 
@@ -101,6 +106,12 @@ public class MessageActivity extends AppCompatActivity {
         intent = getIntent();
         String userid = intent.getStringExtra("userid");
 
+
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS);
+            window.setStatusBarColor(Color.parseColor(color));
+        }
 
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
