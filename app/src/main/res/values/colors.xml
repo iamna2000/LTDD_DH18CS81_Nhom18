@@ -14,4 +14,6 @@
     <color name="PrimaryLightColor">#E1E2E1</color>
     <color name="PrimaryColor">#90a4ae</color>
     <color name="ItemColor">#9fa8da</color>
+    <color name="PrimaryDark">#EDC52A</color>
+    <color name="yellowMain">#fada5f</color>
 </resources>

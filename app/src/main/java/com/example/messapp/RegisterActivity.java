@@ -7,6 +7,7 @@ import android.util.Patterns;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -29,24 +30,45 @@ public class RegisterActivity extends AppCompatActivity {
 
     EditText username, email, password, confirm_password;
     Button btn_register;
-    TextInputLayout user;
+    TextView tv_login;
 
     FirebaseAuth mAuth;
     DatabaseReference reference;
 
+    float v=0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
-
         username = findViewById(R.id.username);
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         confirm_password = findViewById(R.id.confirm_password);
         btn_register = findViewById(R.id.btn_register);
-        user = findViewById(R.id.user);
+        tv_login = findViewById(R.id.tv_login);
+
+        email.setTranslationX(800);
+        password.setTranslationX(800);
+        confirm_password.setTranslationX(800);
+        username.setTranslationX(800);
+        btn_register.setTranslationX(800);
+        tv_login.setTranslationY(300);
+
+        username.setAlpha(v);
+        email.setAlpha(v);
+        password.setAlpha(v);
+        confirm_password.setAlpha(v);
+        btn_register.setAlpha(v);
+        tv_login.setAlpha(v);
+
+        username.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(300).start();
+        email.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(500).start();
+        password.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(700).start();
+        confirm_password.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(900).start();
+        btn_register.animate().translationX(0).alpha(1).setDuration(800).setStartDelay(1100).start();
+        tv_login.animate().translationY(0).alpha(1).setDuration(1000).setStartDelay(400).start();
 
         mAuth = FirebaseAuth.getInstance();
 
@@ -68,6 +90,14 @@ public class RegisterActivity extends AppCompatActivity {
                 }else{
                     register(txt_username, txt_email, txt_password);
                 }
+            }
+        });
+
+        tv_login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(RegisterActivity.this, LoginActivity.class));
+                finish();
             }
         });
     }
@@ -105,6 +135,7 @@ public class RegisterActivity extends AppCompatActivity {
                 hashMap.put("email", email);
                 hashMap.put("id", user.getUid());
                 hashMap.put("imageURL", "default");
+                hashMap.put("status", "offline");
 
                 reference.setValue(hashMap).addOnSuccessListener(new OnSuccessListener<Void>() {
                     @Override

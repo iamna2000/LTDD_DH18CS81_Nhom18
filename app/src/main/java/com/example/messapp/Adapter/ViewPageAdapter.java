@@ -37,21 +37,21 @@ public class ViewPageAdapter extends FragmentStatePagerAdapter {
         return 3;
     }
 
-    @Nullable
-    @Override
-    public CharSequence getPageTitle(int position) {
-        String title = "";
-        switch (position){
-            case 0:
-                title = "Message";
-                break;
-            case 1:
-                title = "Users";
-                break;
-            case 2:
-                title = "Profile";
-                break;
-        }
-        return title;
-    }
+//    @Nullable
+//    @Override
+//    public CharSequence getPageTitle(int position) {
+//        String title = "";
+//        switch (position){
+//            case 0:
+//                title = "Message";
+//                break;
+//            case 1:
+//                title = "Users";
+//                break;
+//            case 2:
+//                title = "Profile";
+//                break;
+//        }
+//        return title;
+//    }
 }

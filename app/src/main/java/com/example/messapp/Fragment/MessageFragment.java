@@ -17,6 +17,7 @@ import com.example.messapp.MessageActivity;
 import com.example.messapp.Model.Chat;
 import com.example.messapp.Model.Chatlist;
 import com.example.messapp.Model.User;
+import com.example.messapp.Notifications.Token;
 import com.example.messapp.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -25,6 +26,7 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+import com.google.firebase.iid.FirebaseInstanceId;
 
 import org.jetbrains.annotations.NotNull;
 
@@ -76,7 +78,15 @@ public class MessageFragment extends Fragment {
             }
         });
 
+        updateToken(FirebaseInstanceId.getInstance().getToken());
+
         return view;
+    }
+
+    private void updateToken (String token){
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Token");
+        Token token1 = new Token(token);
+        reference.child(fuser.getUid()).setValue(token1);
     }
 
     private void chatList() {
@@ -94,7 +104,7 @@ public class MessageFragment extends Fragment {
                         }
                     }
                 }
-                userAdapter = new UserAdapter(getContext(), mUsers);
+                userAdapter = new UserAdapter(getContext(), mUsers, true);
                 recyclerView.setAdapter(userAdapter);
             }
 

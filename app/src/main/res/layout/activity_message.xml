@@ -4,74 +4,103 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#e6e6e6"
+    android:background="#E8E8E8"
     tools:context=".MessageActivity">
 
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/bar_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="100dp"
+        app:elevation="0dp"
+        android:orientation="vertical"
+        android:background="@drawable/chat_toolbar">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/colorAccent"
+            android:layout_height="match_parent"
+            android:elevation="4dp"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle">
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
 
-            <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/user_image" />
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:id="@+id/user_image"
+                    android:layout_width="60dp"
+                    android:layout_height="60dp"
+                    android:layout_marginTop="4dp"
+                    app:civ_border_color="#ffffff"
+                    app:civ_border_width="2dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.37"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.083"
+                    tools:ignore="MissingConstraints" />
 
-            <TextView
-                android:id="@+id/username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="35dp"
-                android:layout_toEndOf="@id/user_image"
-                android:layout_toRightOf="@id/user_image"
-                android:fontFamily="@font/montserrat"
-                android:textSize="20dp"
-                android:textStyle="bold" />
+                <TextView
+                    android:id="@+id/username"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/user_image"
+                    android:fontFamily="@font/sanfrancisco_bold"
+                    android:textSize="19sp"
+                    android:textColor="#CC252525"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.374"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/user_image"
+                    app:layout_constraintVertical_bias="0.0" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
 
         </androidx.appcompat.widget.Toolbar>
     </com.google.android.material.appbar.AppBarLayout>
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycle_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/recycle_view"
-        android:layout_below="@+id/bar_layout"
-        android:layout_above="@+id/bottom"/>
+        android:layout_above="@+id/bottom"
+        android:layout_below="@+id/bar_layout" />
 
     <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:background="#fff"
         android:id="@+id/bottom"
-        android:layout_alignParentBottom="true">
+        android:layout_width="match_parent"
+        android:layout_height="53dp"
+        android:layout_alignParentBottom="true"
+        android:background="#fff"
+        android:padding="5dp">
 
         <EditText
             android:id="@+id/text_send"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="340dp"
+            android:layout_height="33dp"
             android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="17dp"
             android:layout_toLeftOf="@+id/btn_send"
-            android:background="@android:color/transparent"
-            android:fontFamily="@font/montserrat"
-            android:hint="Type a message..." />
+            android:background="@drawable/type_bg"
+            android:fontFamily="@font/sanfrancisco_regular"
+            android:hint="Type a message..."
+            android:paddingLeft="15dp" />
 
         <ImageButton
-            android:layout_width="40dp"
-            android:layout_height="40dp"
             android:id="@+id/btn_send"
-            android:background="@drawable/ic_action_send"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_alignParentTop="true"
             android:layout_alignParentEnd="true"
-            android:layout_alignParentRight="true"/>
+            android:layout_alignParentRight="true"
+            android:layout_marginTop="6dp"
+            android:layout_marginEnd="12dp"
+            android:layout_marginRight="12dp"
+            android:background="@drawable/ic_action_send" />
 
     </RelativeLayout>
 

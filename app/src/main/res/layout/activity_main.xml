@@ -9,48 +9,58 @@
 
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        app:elevation="0dp">
 
         <androidx.appcompat.widget.Toolbar
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:background="@color/PrimaryColor"
+            android:layout_height="80dp"
+            android:background="@color/yellowMain"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
             app:popupTheme="@style/MenuStyle">
 
             <de.hdodenhof.circleimageview.CircleImageView
-                android:layout_width="50dp"
-                android:layout_height="50dp"
-                android:id="@+id/user_image" />
+                android:id="@+id/user_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center" />
 
-            <TextView
-                android:id="@+id/menu_username"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_centerVertical="true"
-                android:layout_marginLeft="28dp"
-                android:layout_toEndOf="@id/user_image"
-                android:layout_toRightOf="@id/user_image"
-                android:fontFamily="@font/montserrat"
-                android:textSize="20dp"
-                android:textStyle="bold"
-                android:textColor="@color/white"/>
+
+            <!--            <TextView-->
+            <!--                android:id="@+id/menu_username"-->
+            <!--                android:layout_width="wrap_content"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_centerVertical="true"-->
+            <!--                android:layout_marginLeft="28dp"-->
+            <!--                android:layout_toEndOf="@id/user_image"-->
+            <!--                android:layout_toRightOf="@id/user_image"-->
+            <!--                android:fontFamily="@font/roboto1"-->
+            <!--                android:textSize="23dp"-->
+            <!--                android:textStyle="bold"-->
+            <!--                android:textColor="@color/white"/>-->
 
         </androidx.appcompat.widget.Toolbar>
 
 
-
     </com.google.android.material.appbar.AppBarLayout>
 
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:background="@color/yellowMain"
+        android:layout_weight="1" />
+
     <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tab_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/tab_layout"
-        app:tabSelectedTextColor="@color/purple_500"/>
-    <androidx.viewpager.widget.ViewPager
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/view_pager"/>
+        app:tabSelectedTextColor="@color/purple_500"
+        app:tabIndicatorColor="#F17E0C"
+        app:tabIndicatorGravity="top"
+        android:elevation="5dp"
+        app:tabIndicatorAnimationMode="elastic"
+        app:tabIndicatorFullWidth="false"/>
 
 </LinearLayout>

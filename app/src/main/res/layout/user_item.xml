@@ -5,16 +5,15 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginTop="4dp"
-    android:background="@drawable/background_user"
     android:layout_marginLeft="4dp"
     android:layout_marginRight="4dp"
     >
 
 
     <de.hdodenhof.circleimageview.CircleImageView
+        android:id="@+id/user_image"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:id="@+id/user_image"
         android:layout_marginTop="2dp"
         app:civ_border="true" />
 
@@ -24,11 +23,13 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="5dp"
         android:layout_toEndOf="@id/user_image"
         android:layout_toRightOf="@id/user_image"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/sanfrancisco_bold"
+        android:text="Hải fasda"
         android:textColor="#30323C"
-        android:textSize="19dp"
+        android:textSize="18dp"
         android:textStyle="bold" />
 
     <TextView
@@ -37,10 +38,40 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/username"
         android:layout_marginLeft="15dp"
+        android:layout_marginTop="1dp"
         android:layout_toRightOf="@+id/user_image"
-        android:fontFamily="@font/montserrat"
+        android:fontFamily="@font/sanfrancisco_regular"
         android:maxLines="1"
+        android:text="nhớ anh nhiều ahihi"
         android:textColor="#595555"
         android:textSize="15dp" />
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        app:civ_border_width="10dp"
+        app:civ_border_color="#05df29"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="-15dp"
+        android:layout_below="@id/username"
+        android:layout_toRightOf="@id/user_image"
+        android:layout_toEndOf="@id/user_image"
+        android:visibility="gone"
+        android:id="@+id/img_on"/>
+
+    <de.hdodenhof.circleimageview.CircleImageView
+        android:layout_width="15dp"
+        android:layout_height="15dp"
+        app:civ_border_width="10dp"
+        app:civ_border_color="#bfbfbf"
+        android:src="@mipmap/ic_launcher"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="-15dp"
+        android:layout_below="@id/username"
+        android:layout_toRightOf="@id/user_image"
+        android:layout_toEndOf="@id/user_image"
+        android:visibility="gone"
+        android:id="@+id/img_off"/>
 
 </RelativeLayout>
