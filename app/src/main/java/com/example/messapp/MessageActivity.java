@@ -113,6 +113,8 @@ public class MessageActivity extends AppCompatActivity {
             window.setStatusBarColor(Color.parseColor(color));
         }
 
+
+
         btn_send.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {

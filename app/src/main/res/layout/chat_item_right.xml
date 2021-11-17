@@ -36,7 +36,7 @@
             android:layout_below="@+id/show_message"
             android:layout_alignParentEnd="true"
             android:layout_alignParentRight="true"
-            android:fontFamily="@font/roboto1" />
+            android:fontFamily="@font/sanfrancisco_light" />
     </RelativeLayout>
 
 </RelativeLayout>

@@ -10,6 +10,7 @@ import androidx.recyclerview.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import com.example.messapp.Adapter.MessageAdapter;
 import com.example.messapp.Adapter.UserAdapter;
@@ -37,6 +38,7 @@ import java.util.List;
 public class MessageFragment extends Fragment {
 
     private RecyclerView recyclerView;
+    TextView empty_view;
 
     private UserAdapter userAdapter;
     private List<User> mUsers;
@@ -51,6 +53,7 @@ public class MessageFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_message, container, false);
 
+        empty_view = view.findViewById(R.id.empty_view);
         recyclerView = view.findViewById(R.id.recycle_view);
         recyclerView.setHasFixedSize(true);
 
@@ -69,6 +72,15 @@ public class MessageFragment extends Fragment {
                     Chatlist chatlist = dataSnapshot.getValue(Chatlist.class);
                     userList.add(chatlist);
                 }
+                if (userList.isEmpty()){
+                    recyclerView.setVisibility(View.GONE);
+                    empty_view.setVisibility(View.VISIBLE);
+                }else {
+                    recyclerView.setVisibility(View.VISIBLE);
+                    empty_view.setVisibility(View.GONE);
+
+                }
+
                 chatList();
             }
 

@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "970838919584",
+    "firebase_url": "https://messapp-d3e67-default-rtdb.firebaseio.com",
     "project_id": "messapp-d3e67",
     "storage_bucket": "messapp-d3e67.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "970838919584-hmbholttl4nv8lsbkcivfd466ol16d4e.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.messapp",
+            "certificate_hash": "2c9ad61fe1ce53407de8ca06c7db4f66aead28f6"
+          }
+        },
         {
           "client_id": "970838919584-pbkutt7t09ihd1oe9qlectc9lv9ca9i6.apps.googleusercontent.com",
           "client_type": 3
